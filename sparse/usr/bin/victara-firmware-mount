@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir -p /firmware
+mount -o ro,nosuid,nodev /dev/mmcblk0p1 /firmware
+echo -n /firmware/image > /sys/module/firmware_class/parameters/path

@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount the modem firmware partition for the kernel firmware loader
+DefaultDependencies=no
+Before=systemd-udevd.service
+RequiresMountsFor=/sys /dev
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/victara-firmware-mount
+
+[Install]
+WantedBy=sysinit.target
